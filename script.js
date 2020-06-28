@@ -26,41 +26,54 @@ function generatePassword() {
     // Prompt User for password criteria and add arrays which match criteria to the "pool"
     // possibly change these to confirms? hmm
        var charLower = prompt("include lowercase?");
-       if (charLower === "y") {
+       if (charLower.toLocaleLowerCase() === "y") {
         charPool = charPool.concat(listLower);
         alert("You chose to include lowercase letters.");
         selectedType++;
         }
-        else if (charLower ==="n") {
+        else if (charLower.toLocaleLowerCase() ==="n") {
             alert("No lowercase letters will be included.")
         }
-       var charUpper = prompt("include uppercase?");
-       if (charUpper === "y") {
+        else if (charLower.toLocaleLowerCase() != "y" || charLower.toLocaleLowerCase() != "n") {
+            alert("please enter 'y' or 'n'")
+        }
+        var charUpper = prompt("include uppercase?");
+        if (charUpper.toLocaleLowerCase() === "y") {
         charPool = charPool.concat(listUpper);
         alert("You chose to include uppercase letters.");
         selectedType++;
         }
-        else if (charUpper ==="n") {
+        else if (charUpper.toLocaleLowerCase() ==="n") {
             alert("No uppercase letters will be included.")
         }
-       var charNum = prompt("include numbers?");
-       if (charNum === "y") {
+        else if (charUpper.toLocaleLowerCase() != "y" || charUpper.toLocaleLowerCase() != "n") {
+            alert("please enter 'y' or 'n'")
+        }
+        var charNum = prompt("include numbers?");
+        if (charNum.toLocaleLowerCase()  === "y") {
         charPool = charPool.concat(listNum);
         alert("You chose to include numbers.");
         selectedType++;
         }
-        else if (charNum ==="n") {
+        else if (charNum.toLocaleLowerCase()  ==="n") {
             alert("No numbers will be included.")
         }
-       var charSpec = prompt("include special characters?");
-       if (charSpec === "y") {
+        else if (charNum.toLocaleLowerCase() != "y" || charNum.toLocaleLowerCase() != "n") {
+            alert("please enter 'y' or 'n'")
+        }
+        var charSpec = prompt("include special characters?");
+        if (charSpec.toLocaleLowerCase() === "y") {
         charPool = charPool.concat(listSpec);
         alert("You chose to include special characters.");
         selectedType++;
         }
-        else if (charSpec ==="n") {
-            alert("No special characters will be included.")
+        else if (charSpec.toLocaleLowerCase() ==="n") {
+        alert("No special characters will be included.");
         }
+        else if (charSpec.toLocaleLowerCase() != "y" || charSpec.toLocaleLowerCase() != "n") {
+            alert("please enter 'y' or 'n'")
+        }
+        
         if (selectedType > 0){
         // Loop - select random characters from pool according to user's chosen length
         var newPass = "";
@@ -72,11 +85,12 @@ function generatePassword() {
             return placeholder;
             generated = true;
         }
-        } else if (selectedType === 0) {
-            alert("Whoops! Looks like you forgot to select a criteria. Let's try that again.")
+        } else if (selectedType === 0 && (userLength > 7 && userLength < 129)) {
+            alert("Whoops! Looks like you forgot to select some criteria. Let's try that again.")
         }
         else (alert("Whoops! Try again, passwords must be between 8 and 128 characters."));
         }
+      
       }
 
     
