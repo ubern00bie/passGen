@@ -14,7 +14,7 @@ If an invalid option is chosen, the user is prompted with messages explaining th
 When all criteria are gathered, the password is generated from the pool of chosen characters and the output is displayed to the text area. 
 
 The deployed app can be seen here: https://ubern00bie.github.io/passGen/
-![Day Planner Demo](./assets/passGen.PNG)
+![Password Generator Demo](./assets/passGen.PNG)
 
 Contact info: jbenningfield.dev@gmail.com
 
